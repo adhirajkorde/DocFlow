@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900 transition-colors duration-200 antialiased selection:bg-indigo-100 selection:text-indigo-900;
+  }
+  .dark body {
+    @apply bg-[#0e1117] text-gray-100 selection:bg-indigo-500/30 selection:text-indigo-100;
+  }
+}
+
+/* Quill overrides to match premium SaaS style */
+.quill-wrapper .ql-toolbar.ql-snow {
+  @apply border-none border-b border-gray-200 bg-gray-50/50 backdrop-blur-sm rounded-t-xl py-3 px-4 transition-colors duration-200;
+  font-family: inherit;
+}
+.dark .quill-wrapper .ql-toolbar.ql-snow {
+  @apply border-gray-800 bg-[#161b22]/80;
+}
+.quill-wrapper .ql-toolbar button:hover .ql-stroke {
+  @apply stroke-indigo-600;
+}
+.dark .quill-wrapper .ql-toolbar button:hover .ql-stroke {
+  @apply stroke-indigo-400;
+}
+.quill-wrapper .ql-toolbar button:hover .ql-fill {
+  @apply fill-indigo-600;
+}
+.dark .quill-wrapper .ql-toolbar button:hover .ql-fill {
+  @apply fill-indigo-400;
+}
+.quill-wrapper .ql-toolbar button.ql-active .ql-stroke {
+  @apply stroke-indigo-700;
+}
+.dark .quill-wrapper .ql-toolbar button.ql-active .ql-stroke {
+  @apply stroke-indigo-300;
+}
+.dark .quill-wrapper .ql-stroke {
+  @apply stroke-gray-400;
+}
+.dark .quill-wrapper .ql-fill {
+  @apply fill-gray-400;
+}
+.dark .quill-wrapper .ql-picker {
+  @apply text-gray-400;
+}
+
+.quill-wrapper .ql-container.ql-snow {
+  @apply border-none font-sans text-lg text-gray-800 transition-colors duration-200;
+}
+.dark .quill-wrapper .ql-container.ql-snow {
+  @apply text-gray-200;
+}
+
+.quill-wrapper .ql-editor {
+  @apply px-4 sm:px-12 py-8 min-h-[60vh] leading-relaxed;
+}
+
+.quill-wrapper .ql-editor p {
+  @apply mb-4;
+}
+.quill-wrapper .ql-editor h1 {
+  @apply text-4xl font-bold mb-6 mt-8 tracking-tight;
+}
+.quill-wrapper .ql-editor h2 {
+  @apply text-2xl font-semibold mb-4 mt-6 tracking-tight;
+}
+.quill-wrapper .ql-editor h3 {
+  @apply text-xl font-medium mb-3 mt-5;
+}
+.quill-wrapper .ql-editor blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4;
+}
+.dark .quill-wrapper .ql-editor blockquote {
+  @apply border-gray-700 text-gray-400;
+}
+.quill-wrapper .ql-editor a {
+  @apply text-indigo-600 underline decoration-indigo-300 underline-offset-2 transition-colors hover:decoration-indigo-600;
+}
+.dark .quill-wrapper .ql-editor a {
+  @apply text-indigo-400 decoration-indigo-700 hover:decoration-indigo-400;
+}
+.quill-wrapper.read-only .ql-editor {
+  @apply px-0;
+}
